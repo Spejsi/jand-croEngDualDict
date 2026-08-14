@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>English ↔ Croatian Dictionary</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="card hero">
+        <p class="eyebrow">Bidirectional dictionary</p>
+        <h1>English ↔ Croatian Dictionary</h1>
+        <p class="subcopy">
+          Search in either language, switch directions manually, or let the app auto-detect the best match.
+        </p>
+      </section>
+
+      <section class="card controls" aria-label="Dictionary search controls">
+        <label class="field">
+          <span>Search</span>
+          <input id="searchInput" type="search" placeholder="Type a word like hello or voda" autocomplete="off" />
+        </label>
+
+        <label class="field">
+          <span>Mode</span>
+          <select id="directionSelect" aria-label="Select search direction">
+            <option value="auto">Auto-detect</option>
+            <option value="en-hr">English → Croatian</option>
+            <option value="hr-en">Croatian → English</option>
+          </select>
+        </label>
+      </section>
+
+      <section class="card results-panel">
+        <div class="results-header">
+          <div>
+            <h2>Results</h2>
+            <p id="directionNote">Loading dictionary…</p>
+          </div>
+          <span id="resultCount" class="pill">0 entries</span>
+        </div>
+        <ul id="resultsList" class="results-list" aria-live="polite"></ul>
+      </section>
+    </main>
+    <noscript>This dictionary requires JavaScript to run.</noscript>
+  </body>
+</html>
