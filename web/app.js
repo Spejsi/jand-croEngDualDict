@@ -709,14 +709,29 @@ function render() {
   for (const item of results) {
     const li = document.createElement("li");
     li.className = "result-item";
-    li.innerHTML = `
-      <h3>${item.source}</h3>
-      <p>${item.target}</p>
-      <div class="result-tags">
-        <span class="tag">EN: ${item.entry.en}</span>
-        <span class="tag">HR: ${item.entry.hr}</span>
-      </div>
-    `;
+
+    const h3 = document.createElement("h3");
+    h3.textContent = item.source;
+
+    const p = document.createElement("p");
+    p.textContent = item.target;
+
+    const tags = document.createElement("div");
+    tags.className = "result-tags";
+
+    const tagEn = document.createElement("span");
+    tagEn.className = "tag";
+    tagEn.textContent = "EN: " + item.entry.en;
+
+    const tagHr = document.createElement("span");
+    tagHr.className = "tag";
+    tagHr.textContent = "HR: " + item.entry.hr;
+
+    tags.appendChild(tagEn);
+    tags.appendChild(tagHr);
+    li.appendChild(h3);
+    li.appendChild(p);
+    li.appendChild(tags);
     resultsList.appendChild(li);
   }
 }
