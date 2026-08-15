@@ -22,6 +22,10 @@
     user-select: none;
 }
 
+html, body {
+    min-height: 100vh;
+}
+
 body {
     background-color: #f1f5f9;
     color: #334155;
@@ -30,7 +34,8 @@ body {
 }
 
 .container {
-    max-width: 600px;
+    width: 100%;
+    max-width: 980px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -310,4 +315,28 @@ body {
     border-top: 1.5px solid transparent;
     border-left: 1.5px solid transparent;
     box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.6);
+}
+
+@media (orientation: landscape) and (min-width: 600px) {
+    body {
+        padding: 12px 20px;
+    }
+
+    .container {
+        max-width: 1100px;
+        padding-bottom: 72px;
+        gap: 14px;
+    }
+
+    .header-card {
+        padding: 20px 18px;
+    }
+
+    .info-card {
+        padding: 18px;
+    }
+
+    .guide-list li {
+        padding: 10px 0;
+    }
 }
