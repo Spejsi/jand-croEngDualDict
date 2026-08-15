@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name" translatable="false">Engleski rječnik</string>
+    <string name="app_name" translatable="false">Englesko-hrvatski rječnik</string>
     <string name="appId" translatable="false">ca-app-pub-3225864464920538~2492612565</string>
 
     <!--  TEST  -->
-    <string name="adUnitId" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <!--    <string name="adUnitId" translatable="false">ca-app-pub-3940256099942544/6300978111</string>-->
 
     <string name="exit_confirmation_row_1">Jeste li sigurni</string>
     <string name="exit_confirmation_row_2">da želite izaći iz aplikacije?</string>

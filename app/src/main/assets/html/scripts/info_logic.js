@@ -4,7 +4,7 @@ let activeTab = "about";
 
 const translations = {
     hr: {
-        appTitle: "Englesko-Hrvatski Rječnik",
+        appTitle: "Englesko-hrvatski rječnik",
         appSubtitle: "Brzo i jednostavno pretraživanje riječi i izraza",
         tabAboutBtn: "O aplikaciji",
         tabGuideBtn: "Upute",

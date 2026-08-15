@@ -19,5 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Engleski rječnik"
+rootProject.name = "Englesko-hrvatski rječnik"
 include ':app'
