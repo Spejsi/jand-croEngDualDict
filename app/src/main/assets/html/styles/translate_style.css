@@ -1,0 +1,423 @@
+/* Ugradnja Open Sans varijabilnih fontova */
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../fonts/OpenSans-VariableFont_wdth,wght.ttf') format('truetype-variations');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../fonts/OpenSans-Italic-VariableFont_wdth,wght.ttf') format('truetype-variations');
+    font-weight: 100 900;
+    font-style: italic;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'OpenSans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Omogućava unos i odabir teksta u polju za pretragu */
+input, textarea {
+    -webkit-user-select: text;
+    user-select: text;
+}
+
+html, body {
+    min-height: 100vh;
+    background: radial-gradient(circle at 10% 20%, #e0f2fe 0%, #f1f5f9 90%);
+    color: #334155;
+    scroll-behavior: smooth;
+}
+
+body {
+    padding: 16px 16px 100px 16px;
+}
+
+.search-box {
+    background: #ffffff;
+    padding: 16px;
+    border-radius: 16px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+    margin-bottom: 16px;
+    border: 1.5px solid #60a5fa;
+}
+
+.segmented-control {
+    display: flex;
+    background-color: #f1f5f9;
+    padding: 4px;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    gap: 4px;
+    border: 1px solid #e2e8f0;
+}
+
+.segmented-control:last-child {
+    margin-bottom: 0;
+}
+
+.segmented-control input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.segment-label {
+    flex: 1;
+    text-align: center;
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    user-select: none;
+    opacity: 0.5;
+}
+
+.flag-img {
+    width: 26px;
+    height: 18px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+    border-bottom: 1.5px solid rgba(255, 255, 255, 0.8);
+    border-right: 1.5px solid rgba(255, 255, 255, 0.8);
+    border-top: 1.5px solid transparent;
+    border-left: 1.5px solid transparent;
+    box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.6);
+}
+
+.arrow-icon {
+    width: 22px;
+    height: 22px;
+    color: #94a3b8;
+    transition: color 0.25s ease, transform 0.25s ease;
+    flex-shrink: 0;
+}
+
+.segmented-control input[type="radio"]:checked + .segment-label .arrow-icon {
+    color: #2563eb;
+}
+
+.segment-label:hover {
+    opacity: 0.75;
+}
+
+.segmented-control input[type="radio"]:checked + .segment-label {
+    background-color: #ffffff;
+    color: #000000;
+    opacity: 1;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.input-wrapper {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+    width: 100%;
+}
+
+.input-wrapper input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 12px;
+    border: 1.5px solid #93c5fd;
+    border-radius: 10px;
+    font-size: 17px;
+    color: #1e293b;
+    background-color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 6px rgba(59, 130, 246, 0.15);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input-wrapper input::placeholder {
+    font-size: 14px;
+    color: #94a3b8;
+}
+
+.input-wrapper input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2), 0 0 10px rgba(37, 99, 235, 0.25);
+}
+
+.plastic-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 1px solid #1d4ed8;
+    border-radius: 10px;
+    cursor: pointer;
+    background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 50%, #1e3a8a 100%);
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.5),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.25),
+        0 2px 4px rgba(0, 0, 0, 0.2);
+    transition: all 0.15s ease;
+    flex-shrink: 0;
+}
+
+.plastic-btn:active {
+    background: linear-gradient(180deg, #1e3a8a 0%, #1d4ed8 100%);
+    box-shadow:
+        inset 0 2px 4px rgba(0, 0, 0, 0.4),
+        0 1px 2px rgba(0, 0, 0, 0.1);
+    transform: translateY(1px);
+}
+
+.plastic-btn svg {
+    width: 24px;
+    height: 24px;
+    min-width: 24px;
+    min-height: 24px;
+    display: block;
+}
+
+/* Plutajući gumb - prema zadanim postavkama skriven */
+.scroll-top-btn {
+    position: fixed !important;
+    top: 50% !important;
+    transform: translateY(-50%) scale(0.8) !important;
+    right: 16px !important;
+    width: 48px !important;
+    height: 48px !important;
+    padding: 0 !important;
+    border: 1px solid #1d4ed8 !important;
+    border-radius: 50% !important;
+    cursor: pointer !important;
+    background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 50%, #1e3a8a 100%) !important;
+    color: #ffffff !important;
+    box-shadow:
+        inset 0 1px 1px rgba(255, 255, 255, 0.5),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.25),
+        0 4px 12px rgba(0, 0, 0, 0.3) !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    z-index: 2147483647 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.3s ease, transform 0.3s ease !important;
+}
+
+/* Stanje kada je gumb vidljiv - postavljen na 50% transparentnosti */
+.scroll-top-btn.visible {
+    opacity: 0.5 !important;
+    pointer-events: auto !important;
+    transform: translateY(-50%) scale(1) !important;
+}
+
+/* Hover samo za uređaje koji podržavaju pravi hover mišem (isključuje sticky hover na mobitelima) */
+@media (hover: hover) {
+    .scroll-top-btn.visible:hover {
+        opacity: 1 !important;
+        background: linear-gradient(180deg, #1e3a8a 0%, #1d4ed8 100%) !important;
+        transform: translateY(-50%) scale(0.92) !important;
+    }
+}
+
+/* Stanje prilikom pritiska (aktivno) */
+.scroll-top-btn:active {
+    opacity: 1 !important;
+    background: linear-gradient(180deg, #1e3a8a 0%, #1d4ed8 100%) !important;
+    transform: translateY(-50%) scale(0.92) !important;
+}
+
+.scroll-top-btn svg {
+    width: 24px !important;
+    height: 24px !important;
+    display: block !important;
+}
+
+.results-container {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.translation-info-header {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-size: 14px;
+    color: #475569;
+    border: 1.5px solid #60a5fa;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.translation-info-header strong {
+    color: #0f172a;
+}
+
+.translation-info-dir {
+    color: #475569;
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+.history-container {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1.5px solid #60a5fa;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Stil kada se element vuče izvan granica kartice (zona brisanja) */
+.history-container.drop-outside-warning {
+    border-color: #ef4444 !important;
+    background-color: #fef2f2 !important;
+}
+
+.history-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.history-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #475569;
+}
+
+.clear-history-btn {
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.history-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.history-chip {
+    background-color: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    color: #334155;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: grab;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    touch-action: none; /* Sprječava defaultno skrolanje stranice prilikom povlačenja chipa */
+}
+
+.history-chip:hover {
+    background-color: #2563eb;
+    color: #ffffff;
+    border-color: #2563eb;
+}
+
+/* Stil za vrijeme drag & drop povlačenja pojedinog chipa */
+.history-chip.dragging {
+    opacity: 0.85;
+    background-color: #1d4ed8;
+    color: #ffffff;
+    border-color: #1e3a8a;
+    box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
+    cursor: grabbing;
+    z-index: 1000;
+    position: relative;
+}
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 16px;
+}
+
+.empty-icon {
+    background-color: #ffffff;
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.1);
+    margin-bottom: 16px;
+}
+
+.empty-state p {
+    font-size: 15px;
+    color: #64748b;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border: 1.5px solid #60a5fa;
+}
+
+.card-header {
+    background: #e2e8f0;
+    padding: 12px 16px;
+    font-weight: 700;
+    font-size: 19px;
+    color: #0f172a;
+    border-bottom: 1px solid #cbd5e1;
+}
+
+.card-body {
+    padding: 12px 16px;
+    background-color: #ffffff;
+}
+
+.translation-list {
+    list-style: none;
+}
+
+.translation-item {
+    padding: 10px 0;
+    font-size: 17px;
+    color: #334155;
+    border-bottom: 1px solid #f1f5f9;
+    line-height: 1.4;
+}
+
+.translation-item:last-child {
+    border-bottom: none;
+}
+
+.no-results {
+    text-align: center;
+    color: #94a3b8;
+    margin-top: 24px;
+    font-size: 15px;
+}
+
+.results-divider {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, #cbd5e1, transparent);
+    margin: 10px 0;
+}

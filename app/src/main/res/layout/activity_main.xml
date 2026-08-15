@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:background="#F8FAFC"
+    tools:ignore="VisualLintSystemUi">
+
+    <FrameLayout
+        android:id="@+id/bannerContainer"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/adUnitId" />
+
+    </FrameLayout>
+
+    <WebView
+        android:id="@+id/webView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/bannerContainer"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="@id/webView"
+        app:layout_constraintBottom_toBottomOf="@id/webView"
+        app:layout_constraintStart_toStartOf="@id/webView"
+        app:layout_constraintEnd_toEndOf="@id/webView" />
+
+    <!-- Donji lijevi gumb (Navigacija) -->
+    <ImageButton
+        android:id="@+id/btnBottomLeft"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_plastic_button"
+        android:contentDescription="@string/app_button_left"
+        android:padding="12dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/nav_btn_info"
+        app:tint="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+    <!-- Srednji gumbi za odabir jezika (3D Glossy Orb zastavice) -->
+    <LinearLayout
+        android:id="@+id/layoutLanguageContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/btnBottomLeft"
+        app:layout_constraintEnd_toStartOf="@id/btnBottomRight">
+
+        <!-- Hrvatska zastava -->
+        <ImageButton
+            android:id="@+id/btnFlagHr"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/bg_orb_circle"
+            android:clipToOutline="true"
+            android:contentDescription="@string/app_button_croatian"
+            android:elevation="6dp"
+            android:foreground="@drawable/fg_glossy_overlay"
+            android:padding="0dp"
+            android:scaleType="centerCrop"
+            tools:targetApi="31"
+            tools:ignore="TouchTargetSizeCheck,NewApi" />
+
+        <!-- Engleska zastava -->
+        <ImageButton
+            android:id="@+id/btnFlagEn"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/bg_orb_circle"
+            android:clipToOutline="true"
+            android:contentDescription="@string/app_button_english"
+            android:elevation="6dp"
+            android:foreground="@drawable/fg_glossy_overlay"
+            android:padding="0dp"
+            android:scaleType="centerCrop"
+            tools:targetApi="31"
+            tools:ignore="TouchTargetSizeCheck,NewApi" />
+
+    </LinearLayout>
+
+    <!-- Donji desni gumb (Zatvaranje) -->
+    <ImageButton
+        android:id="@+id/btnBottomRight"
+        android:layout_width="56dp"
+        android:layout_height="56dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/bg_plastic_button"
+        android:contentDescription="@string/app_button_right"
+        android:padding="12dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/nav_btn_close"
+        app:tint="#FFFFFF"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

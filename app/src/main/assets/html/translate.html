@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rječnik</title>
+    <link rel="stylesheet" href="styles/translate_style.css">
+</head>
+<body>
+
+<div class="search-box">
+    <!-- 1. Red: Odabir smjera prevođenja sa zastavicama -->
+    <div class="segmented-control">
+        <input type="radio" id="dir_cro_en" name="direction" value="cro_en" checked onchange="onDirectionChange()">
+        <label for="dir_cro_en" class="segment-label" aria-label="Hrvatski u Engleski">
+            <img src="images/hr_flag.png" alt="HR" class="flag-img">
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="12" x2="20" y2="12"></line>
+                <polyline points="14 6 20 12 14 18"></polyline>
+            </svg>
+            <img src="images/en_flag.png" alt="EN" class="flag-img">
+        </label>
+
+        <input type="radio" id="dir_en_cro" name="direction" value="en_cro" onchange="onDirectionChange()">
+        <label for="dir_en_cro" class="segment-label" aria-label="Engleski u Hrvatski">
+            <img src="images/en_flag.png" alt="EN" class="flag-img">
+            <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="4" y1="12" x2="20" y2="12"></line>
+                <polyline points="14 6 20 12 14 18"></polyline>
+            </svg>
+            <img src="images/hr_flag.png" alt="HR" class="flag-img">
+        </label>
+    </div>
+
+    <!-- 2. Red: Input polje potpuno samo u svom redu -->
+    <div class="input-wrapper" style="margin-bottom: 12px;">
+        <input type="text" id="searchInput" placeholder="Unesite riječ ili dio riječi" autocomplete="off">
+    </div>
+
+    <!-- 3. Red: Oba gumba (brisanje i prevođenje) + Pretrage / Prijevod dolje -->
+    <div style="display: flex; gap: 8px; align-items: center;">
+        <button type="button" id="clearInputBtn" class="plastic-btn" aria-label="Očisti unos" title="Očisti unos">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </button>
+
+        <div class="segmented-control" style="flex: 1; margin-bottom: 0;">
+            <input type="radio" id="view_history" name="view_mode" value="history" checked onchange="onViewModeChange()">
+            <label for="view_history" class="segment-label">
+                <span id="labelViewHistory">Pretrage</span>
+            </label>
+
+            <input type="radio" id="view_translation" name="view_mode" value="translation" onchange="onViewModeChange()">
+            <label for="view_translation" class="segment-label">
+                <span id="labelViewTranslation">Prijevod</span>
+            </label>
+        </div>
+
+        <button id="translateBtn" class="plastic-btn" onclick="onTranslateClick()" aria-label="Prevedi" title="Prevedi">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 14z" fill="#FFFFFF"/>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<div id="resultsContainer" class="results-container">
+    <!-- Dinamički prikaz povijesti ili prijevoda -->
+</div>
+
+<!-- Plutajući gumb za povratak na vrh -->
+<button id="scrollTopBtn" class="scroll-top-btn" onclick="scrollToTop()" aria-label="Povratak na vrh" title="Povratak na vrh">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="19" x2="12" y2="5"></line>
+        <polyline points="5 12 12 5 19 12"></polyline>
+    </svg>
+</button>
+
+<script src="scripts/translate_logic.js"></script>
+</body>
+</html>

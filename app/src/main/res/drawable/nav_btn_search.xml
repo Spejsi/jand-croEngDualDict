@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Outer rounded square stroke -->
+    <path
+        android:fillColor="@android:color/transparent"
+        android:strokeColor="#000000"
+        android:strokeWidth="2"
+        android:pathData="M17.5556,3 C19.4579,3 21,4.54213 21,6.44444 V17.5556 C21,19.4579 19.4579,21 17.5556,21 H6.44444 C4.54213,21 3,19.4579 3,17.5556 V6.44444 C3,4.54213 4.54213,3 6.44444,3 H17.5556 Z" />
+
+    <!-- Filled magnifying glass (circle + handle) using evenOdd fill rule -->
+    <path
+        android:fillColor="#000000"
+        android:strokeColor="@android:color/transparent"
+        android:fillType="evenOdd"
+        android:pathData="M11.5067,7.01392 C9.02527,7.01392 7.01367,9.02551 7.01367,11.5069 C7.01367,13.9884 9.02527,16 11.5067,16 C12.3853,16 13.205,15.7478 13.8973,15.3119 L15.1658,16.5803 C15.5563,16.9709 16.1895,16.9709 16.58,16.5803 C16.9705,16.1898 16.9705,15.5566 16.58,15.1661 L15.3116,13.8977 C15.7475,13.2053 15.9997,12.3856 15.9997,11.5069 C15.9997,9.02551 13.9881,7.01392 11.5067,7.01392 Z M9.01367,11.5069 C9.01367,10.1301 10.1298,9.01392 11.5067,9.01392 C12.8836,9.01392 13.9997,10.1301 13.9997,11.5069 C13.9997,12.8838 12.8836,14 11.5067,14 C10.1298,14 9.01367,12.8838 9.01367,11.5069 Z" />
+</vector>

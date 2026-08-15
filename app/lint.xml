@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <!-- Onemogućuje lažna Visual Lint upozorenja za preklapanje sa System UI-jem -->
+    <issue id="VisualLintSystemUi" severity="ignore" />
+    <issue id="VisualLintOverlap" severity="ignore" />
+    <issue id="VisualLintBounds" severity="ignore" />
+</lint>

@@ -1,0 +1,34 @@
+# Local configuration file (SDK putanje, osjetljivi ključevi, AdMob ID-jevi)
+local.properties
+
+# Gradle i Build mape
+.gradle/
+build/
+app/build/
+*/build/
+
+# Android Studio / IntelliJ IDEA projektnih datoteka
+.idea/
+*.iml
+.navigation/
+captures/
+
+# Izvješća i skripte za C++ / Native razvoj
+.externalNativeBuild
+.cxx/
+
+# Potpisni ključevi i aplikacijski paketi (NIPOKOJE NE SLATI NA GITHUB)
+*.jks
+*.keystore
+*.apk
+*.aab
+
+# Logovi i privremene datoteke
+*.log
+bin/
+gen/
+out/
+
+# Operativni sustavi (macOS / Windows privremene datoteke)
+.DS_Store
+Thumbs.db
